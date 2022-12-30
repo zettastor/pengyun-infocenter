@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+  <!-- Volume -->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="createVolume">
+    <constructor-arg value="createVolume"/>
+    <constructor-arg value="Volume"/>
+    <constructor-arg value="创建卷"/>
+    <constructor-arg value="Create Volume"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="deleteVolume">
+    <constructor-arg value="deleteVolume"/>
+    <constructor-arg value="Volume"/>
+    <constructor-arg value="删除卷"/>
+    <constructor-arg value="Delete Volume"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="extendVolume">
+    <constructor-arg value="extendVolume"/>
+    <constructor-arg value="Volume"/>
+    <constructor-arg value="扩展卷"/>
+    <constructor-arg value="Extend Volume"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="recycleVolume">
+    <constructor-arg value="recycleVolume"/>
+    <constructor-arg value="Volume"/>
+    <constructor-arg value="回收卷"/>
+    <constructor-arg value="Recycle Volume"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="fixVolume">
+    <constructor-arg value="fixVolume"/>
+    <constructor-arg value="Volume"/>
+    <constructor-arg value="修复卷"/>
+    <constructor-arg value="Fix Volume"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="confirmFixVolume">
+    <constructor-arg value="confirmFixVolume"/>
+    <constructor-arg value="Volume"/>
+    <constructor-arg value="确认修复卷"/>
+    <constructor-arg value="Confirm Fix Volume"/>
+  </bean>
+
+  <!-- StoragePool -->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="createStoragePool">
+    <constructor-arg value="createStoragePool"/>
+    <constructor-arg value="StoragePool"/>
+    <constructor-arg value="创建存储池"/>
+    <constructor-arg value="Create StoragePool"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="updateStoragePool">
+    <constructor-arg value="updateStoragePool"/>
+    <constructor-arg value="StoragePool"/>
+    <constructor-arg value="更新存储池"/>
+    <constructor-arg value="Update StoragePool"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="removeArchiveFromStoragePool">
+    <constructor-arg value="removeArchiveFromStoragePool"/>
+    <constructor-arg value="StoragePool"/>
+    <constructor-arg value="移除存储池中的磁盘"/>
+    <constructor-arg value="Remove Archive From StoragePool"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="deleteStoragePool">
+    <constructor-arg value="deleteStoragePool"/>
+    <constructor-arg value="StoragePool"/>
+    <constructor-arg value="删除存储池"/>
+    <constructor-arg value="Delete StoragePool"/>
+  </bean>
+
+  <!-- Domain -->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="createDomain">
+    <constructor-arg value="createDomain"/>
+    <constructor-arg value="Domain"/>
+    <constructor-arg value="创建域"/>
+    <constructor-arg value="Create Domain"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="updateDomain">
+    <constructor-arg value="updateDomain"/>
+    <constructor-arg value="Domain"/>
+    <constructor-arg value="更新域"/>
+    <constructor-arg value="Update Domain"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="removeDatanodeFromDomain">
+    <constructor-arg value="removeDatanodeFromDomain"/>
+    <constructor-arg value="Domain"/>
+    <constructor-arg value="移除域中的数据节点"/>
+    <constructor-arg value="Remove Datanode From Domain"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="deleteDomain">
+    <constructor-arg value="deleteDomain"/>
+    <constructor-arg value="Domain"/>
+    <constructor-arg value="删除域"/>
+    <constructor-arg value="Delete Domain"/>
+  </bean>
+
+  <!-- Driver -->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="launchDriver">
+    <constructor-arg value="launchDriver"/>
+    <constructor-arg value="Driver"/>
+    <constructor-arg value="挂载驱动"/>
+    <constructor-arg value="Launch Driver"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="umountDriver">
+    <constructor-arg value="umountDriver"/>
+    <constructor-arg value="Driver"/>
+    <constructor-arg value="卸载驱动"/>
+    <constructor-arg value="Umount Driver"/>
+  </bean>
+
+  <!-- Iscsi Access_Rule -->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="applyIscsiAccessRules">
+    <constructor-arg value="applyIscsiAccessRules"/>
+    <constructor-arg value="Access_Rule"/>
+    <constructor-arg value="应用chap认证"/>
+    <constructor-arg value="Apply Iscsi Access Rules"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="cancelIscsiAccessRules">
+    <constructor-arg value="cancelIscsiAccessRules"/>
+    <constructor-arg value="Access_Rule"/>
+    <constructor-arg value="取消chap认证"/>
+    <constructor-arg value="Cancel Iscsi Access Rules"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="deleteIscsiAccessRules">
+    <constructor-arg value="deleteIscsiAccessRules"/>
+    <constructor-arg value="Access_Rule"/>
+    <constructor-arg value="删除chap认证"/>
+    <constructor-arg value="Delete Iscsi Access Rules"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="createIscsiAccessRules">
+    <constructor-arg value="createIscsiAccessRules"/>
+    <constructor-arg value="Access_Rule"/>
+    <constructor-arg value="创建chap认证"/>
+    <constructor-arg value="Create Iscsi AccessRules"/>
+  </bean>
+
+  <!-- Volume Access_Rule -->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="applyVolumeAccessRuleOnVolumes">
+    <constructor-arg value="applyVolumeAccessRuleOnVolumes"/>
+    <constructor-arg value="Access_Rule"/>
+    <constructor-arg value="应用客户机"/>
+    <constructor-arg value="Apply Volume Access Rules"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="cancelVolAccessRuleAllApplied">
+    <constructor-arg value="cancelVolAccessRuleAllApplied"/>
+    <constructor-arg value="Access_Rule"/>
+    <constructor-arg value="取消客户机"/>
+    <constructor-arg value="Cancel Volume Access Rules"/>
+  </bean>
+
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="cancelVolumeAccessRules">
+    <constructor-arg value="cancelVolumeAccessRules"/>
+    <constructor-arg value="Access_Rule"/>
+    <constructor-arg value="取消客户机"/>
+    <constructor-arg value="Cancel Volume Access Rules"/>
+  </bean>
+
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="deleteVolumeAccessRules">
+    <constructor-arg value="deleteVolumeAccessRules"/>
+    <constructor-arg value="Access_Rule"/>
+    <constructor-arg value="删除客户机"/>
+    <constructor-arg value="Delete Volume Access Rules"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="createVolumeAccessRules">
+    <constructor-arg value="createVolumeAccessRules"/>
+    <constructor-arg value="Access_Rule"/>
+    <constructor-arg value="创建客户机"/>
+    <constructor-arg value="Create Volume AccessRules"/>
+  </bean>
+
+  <!-- Hardware -->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="onlineDisk">
+    <constructor-arg value="onlineDisk"/>
+    <constructor-arg value="Hardware"/>
+    <constructor-arg value="磁盘上线"/>
+    <constructor-arg value="Online Disk"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="offlineDisk">
+    <constructor-arg value="offlineDisk"/>
+    <constructor-arg value="Hardware"/>
+    <constructor-arg value="磁盘离线"/>
+    <constructor-arg value="Offline Disk"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="fixConfigMismatchDisk">
+    <constructor-arg value="fixConfigMismatchDisk"/>
+    <constructor-arg value="Hardware"/>
+    <constructor-arg value="修复配置不匹配磁盘"/>
+    <constructor-arg value="Fix Config Mismatch Disk"/>
+  </bean>
+
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="deleteServerNodes">
+    <constructor-arg value="deleteServerNodes"/>
+    <constructor-arg value="Hardware"/>
+    <constructor-arg value="删除服务器节点"/>
+    <constructor-arg value="Delete Server Nodes"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="updateServerNode">
+    <constructor-arg value="updateServerNode"/>
+    <constructor-arg value="Hardware"/>
+    <constructor-arg value="修改服务器节点信息"/>
+    <constructor-arg value="Update Server Node"/>
+  </bean>
+
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="changeDiskLightStatus">
+    <constructor-arg value="changeDiskLightStatus"/>
+    <constructor-arg value="Hardware"/>
+    <constructor-arg value="修改硬盘灯状态"/>
+    <constructor-arg value="Change Disk Light Status"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="markInstanceMaintenance">
+    <constructor-arg value="markInstanceMaintenance"/>
+    <constructor-arg value="Hardware"/>
+    <constructor-arg value="标记节点维护状态"/>
+    <constructor-arg value="Mark Instance Maintenance"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="cancelInstanceMaintenance">
+    <constructor-arg value="cancelInstanceMaintenance"/>
+    <constructor-arg value="Hardware"/>
+    <constructor-arg value="取消节点维护状态"/>
+    <constructor-arg value="Cancel Instance Maintenance"/>
+  </bean>
+
+  <!-- Account -->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="createAccount">
+    <constructor-arg value="createAccount"/>
+    <constructor-arg value="Account"/>
+    <constructor-arg value="新建用户"/>
+    <constructor-arg value="Create Account"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="deleteAccounts">
+    <constructor-arg value="deleteAccounts"/>
+    <constructor-arg value="Account"/>
+    <constructor-arg value="删除用户"/>
+    <constructor-arg value="Delete Accounts"/>
+  </bean>
+  <!--<bean id="listAccounts" class="py.icshare.authorization.ApiToAuthorize">-->
+  <!--<constructor-arg value="listAccounts"/>-->
+  <!--<constructor-arg value="Account"/>-->
+  <!--<constructor-arg value="列出用户"/>-->
+  <!--<constructor-arg value="List Accounts"/>-->
+  <!--</bean>-->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="resetAccountPassword">
+    <constructor-arg value="resetAccountPassword"/>
+    <constructor-arg value="Account"/>
+    <constructor-arg value="重置用户密码"/>
+    <constructor-arg value="Reset Account Password"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="assignRoles">
+    <constructor-arg value="assignRoles"/>
+    <constructor-arg value="Account"/>
+    <constructor-arg value="角色赋予"/>
+    <constructor-arg value="Assign Roles"/>
+  </bean>
+  <!--<bean id="listResources" class="py.icshare.authorization.ApiToAuthorize">-->
+  <!--<constructor-arg value="listResources"/>-->
+  <!--<constructor-arg value="Account"/>-->
+  <!--<constructor-arg value="列出资源"/>-->
+  <!--<constructor-arg value="List Resources"/>-->
+  <!--</bean>-->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="assignResources">
+    <constructor-arg value="assignResources"/>
+    <constructor-arg value="Account"/>
+    <constructor-arg value="资源赋予"/>
+    <constructor-arg value="Assign Resources"/>
+  </bean>
+
+  <!-- Role -->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="createRole">
+    <constructor-arg value="createRole"/>
+    <constructor-arg value="Role"/>
+    <constructor-arg value="创建角色"/>
+    <constructor-arg value="Create Role"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="updateRole">
+    <constructor-arg value="updateRole"/>
+    <constructor-arg value="Role"/>
+    <constructor-arg value="更新角色"/>
+    <constructor-arg value="Update Role"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="deleteRoles">
+    <constructor-arg value="deleteRoles"/>
+    <constructor-arg value="Role"/>
+    <constructor-arg value="删除角色"/>
+    <constructor-arg value="Delete Roles"/>
+  </bean>
+  <!--<bean id="listRoles" class="py.icshare.authorization.ApiToAuthorize">-->
+  <!--<constructor-arg value="listRoles"/>-->
+  <!--<constructor-arg value="Role"/>-->
+  <!--<constructor-arg value="列出角色"/>-->
+  <!--<constructor-arg value="List Roles"/>-->
+  <!--</bean>-->
+
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="createIoLimitations">
+    <constructor-arg value="createIoLimitations"/>
+    <constructor-arg value="Qos"/>
+    <constructor-arg value="创建数据访问Qos"/>
+    <constructor-arg value="Create Io Limitations"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="deleteIoLimitations">
+    <constructor-arg value="deleteIoLimitations"/>
+    <constructor-arg value="Qos"/>
+    <constructor-arg value="删除数据访问Qos"/>
+    <constructor-arg value="Delete Io Limitations"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="updateIoLimitations">
+    <constructor-arg value="updateIoLimitations"/>
+    <constructor-arg value="Qos"/>
+    <constructor-arg value="更新数据访问Qos"/>
+    <constructor-arg value="Update Io Limitations"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="applyIoLimitations">
+    <constructor-arg value="applyIoLimitations"/>
+    <constructor-arg value="Qos"/>
+    <constructor-arg value="应用数据访问Qos"/>
+    <constructor-arg value="Apply Io Limitations"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="cancelIoLimitations">
+    <constructor-arg value="cancelIoLimitations"/>
+    <constructor-arg value="Qos"/>
+    <constructor-arg value="取消数据访问Qos"/>
+    <constructor-arg value="Cancel Io Limitations"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="createMigrationRules">
+    <constructor-arg value="createMigrationRules"/>
+    <constructor-arg value="Qos"/>
+    <constructor-arg value="创建数据重构Qos"/>
+    <constructor-arg value="Create Migration Rules"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="deleteMigrationRules">
+    <constructor-arg value="deleteMigrationRules"/>
+    <constructor-arg value="Qos"/>
+    <constructor-arg value="删除数据重构Qos"/>
+    <constructor-arg value="Delete Migration Rules"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="updateMigrationRules">
+    <constructor-arg value="updateMigrationRules"/>
+    <constructor-arg value="Qos"/>
+    <constructor-arg value="更新数据重构Qos"/>
+    <constructor-arg value="Update Migration Rules"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="applyMigrationRules">
+    <constructor-arg value="applyMigrationRules"/>
+    <constructor-arg value="Qos"/>
+    <constructor-arg value="应用数据重构Qos"/>
+    <constructor-arg value="Apply Migration Rules"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="cancelMigrationRules">
+    <constructor-arg value="cancelMigrationRules"/>
+    <constructor-arg value="Qos"/>
+    <constructor-arg value="取消数据重构Qos"/>
+    <constructor-arg value="Cancel Migration Rules"/>
+  </bean>
+
+  <!-- rebalance -->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="addRebalanceRule">
+    <constructor-arg value="addRebalanceRule"/>
+    <constructor-arg value="Rebalance"/>
+    <constructor-arg value="创建rebalance规则"/>
+    <constructor-arg value="create rebalance rule"/>
+  </bean>
+
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="deleteRebalanceRule">
+    <constructor-arg value="deleteRebalanceRule"/>
+    <constructor-arg value="Rebalance"/>
+    <constructor-arg value="删除rebalance规则"/>
+    <constructor-arg value="delete rebalance rule"/>
+  </bean>
+
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="updateRebalanceRule">
+    <constructor-arg value="updateRebalanceRule"/>
+    <constructor-arg value="Rebalance"/>
+    <constructor-arg value="修改rebalance规则"/>
+    <constructor-arg value="update rebalance rule"/>
+  </bean>
+
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="applyRebalanceRule">
+    <constructor-arg value="applyRebalanceRule"/>
+    <constructor-arg value="Rebalance"/>
+    <constructor-arg value="应用rebalance规则到存储池"/>
+    <constructor-arg value="apply rebalance rule to pool"/>
+  </bean>
+
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="unApplyRebalanceRule">
+    <constructor-arg value="unApplyRebalanceRule"/>
+    <constructor-arg value="Rebalance"/>
+    <constructor-arg value="从存储池中撤销应用的rebalance规则"/>
+    <constructor-arg value="revocation rebalance rule from pool"/>
+  </bean>
+
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="getRebalanceRule">
+    <constructor-arg value="getRebalanceRule"/>
+    <constructor-arg value="Rebalance"/>
+    <constructor-arg value="获取rebalance规则信息"/>
+    <constructor-arg value="get rebalance rule information"/>
+  </bean>
+
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="getAppliedRebalanceRulePool">
+    <constructor-arg value="getAppliedRebalanceRulePool"/>
+    <constructor-arg value="Rebalance"/>
+    <constructor-arg value="获取rebalance规则应用的存储池信息"/>
+    <constructor-arg value="get rebalance rule applied pool"/>
+  </bean>
+
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="getUnAppliedRebalanceRulePool">
+    <constructor-arg value="getUnAppliedRebalanceRulePool"/>
+    <constructor-arg value="Rebalance"/>
+    <constructor-arg value="获取未应用到rebalance规则的存储池信息"/>
+    <constructor-arg value="get pool not applied to rebalance rule"/>
+  </bean>
+
+  <!-- Other -->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="saveOperationLogsToCSV">
+    <constructor-arg value="saveOperationLogsToCSV"/>
+    <constructor-arg value="Other"/>
+    <constructor-arg value="导出操作日志"/>
+    <constructor-arg value="Save Operations To File"/>
+  </bean>
+
+  <!--PerformanceTask-->
+  <!--<bean id="startPerformanceTask" class="py.icshare.authorization.ApiToAuthorize">-->
+  <!--<constructor-arg value="startPerformanceTask"/>-->
+  <!--<constructor-arg value="PerformanceTask"/>-->
+  <!--<constructor-arg value="启动性能任务"/>-->
+  <!--<constructor-arg value="Start Performance Task"/>-->
+  <!--</bean>-->
+  <!--<bean id="stopPerformanceTask" class="py.icshare.authorization.ApiToAuthorize">-->
+  <!--<constructor-arg value="stopPerformanceTask"/>-->
+  <!--<constructor-arg value="PerformanceTask"/>-->
+  <!--<constructor-arg value="停止性能任务"/>-->
+  <!--<constructor-arg value="Stop Performance Task"/>-->
+  <!--</bean>-->
+  <!--<bean id="createPerformanceTask" class="py.icshare.authorization.ApiToAuthorize">-->
+  <!--<constructor-arg value="createPerformanceTask"/>-->
+  <!--<constructor-arg value="PerformanceTask"/>-->
+  <!--<constructor-arg value="创建性能任务"/>-->
+  <!--<constructor-arg value="Create Performance Task"/>-->
+  <!--</bean>-->
+  <!--<bean id="deletePerformanceTask" class="py.icshare.authorization.ApiToAuthorize">-->
+  <!--<constructor-arg value="deletePerformanceTask"/>-->
+  <!--<constructor-arg value="PerformanceTask"/>-->
+  <!--<constructor-arg value="删除性能任务"/>-->
+  <!--<constructor-arg value="Delete Performance Task"/>-->
+  <!--</bean>-->
+
+  <!--AlertTemplate-->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="createAlertRule">
+    <constructor-arg value="createAlertRule"/>
+    <constructor-arg value="AlertTemplate"/>
+    <constructor-arg value="创建告警规则"/>
+    <constructor-arg value="Create Alert Rule"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="deleteAlertRule">
+    <constructor-arg value="deleteAlertRule"/>
+    <constructor-arg value="AlertTemplate"/>
+    <constructor-arg value="删除告警规则"/>
+    <constructor-arg value="Delete Alert Rule"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="mergeAlertRule">
+    <constructor-arg value="mergeAlertRule"/>
+    <constructor-arg value="AlertTemplate"/>
+    <constructor-arg value="合并告警规则"/>
+    <constructor-arg value="Merge Alert Rule"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="updateAlertRule">
+    <constructor-arg value="updateAlertRule"/>
+    <constructor-arg value="AlertTemplate"/>
+    <constructor-arg value="修改告警规则"/>
+    <constructor-arg value="Update Alert Rule"/>
+  </bean>
+
+  <!--AlertMessage-->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="alertsAcknowledge">
+    <constructor-arg value="alertsAcknowledge"/>
+    <constructor-arg value="AlertMessage"/>
+    <constructor-arg value="告警确认"/>
+    <constructor-arg value="Alerts Acknowledge"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="clearAlertsAcknowledge">
+    <constructor-arg value="clearAlertsAcknowledge"/>
+    <constructor-arg value="AlertMessage"/>
+    <constructor-arg value="取消告警确认"/>
+    <constructor-arg value="Clear Alerts Acknowledge"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="alertsClear">
+    <constructor-arg value="alertsClear"/>
+    <constructor-arg value="AlertMessage"/>
+    <constructor-arg value="告警清除"/>
+    <constructor-arg value="Alerts Clear"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="deleteAlerts">
+    <constructor-arg value="deleteAlerts"/>
+    <constructor-arg value="AlertMessage"/>
+    <constructor-arg value="告警删除"/>
+    <constructor-arg value="Delete Alerts"/>
+  </bean>
+
+  <!--AlertFoward-->
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="updateSnmpForwardItem">
+    <constructor-arg value="updateSnmpForwardItem"/>
+    <constructor-arg value="AlertFoward"/>
+    <constructor-arg value="创建和更新snmp配置"/>
+    <constructor-arg value="update Snmp Forward Item"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="saveEmailForwardItem">
+    <constructor-arg value="saveEmailForwardItem"/>
+    <constructor-arg value="AlertFoward"/>
+    <constructor-arg value="创建Email转发项"/>
+    <constructor-arg value="Save Email Forward Item"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="updateEmailForwardItem">
+    <constructor-arg value="updateEmailForwardItem"/>
+    <constructor-arg value="AlertFoward"/>
+    <constructor-arg value="更新Email转发项"/>
+    <constructor-arg value="Update Email Forward Item"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="deleteEmailForwardItem">
+    <constructor-arg value="deleteEmailForwardItem"/>
+    <constructor-arg value="AlertFoward"/>
+    <constructor-arg value="删除Email转发项"/>
+    <constructor-arg value="Delete Email Forward Item"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="saveOrUpdateSmtpItem">
+    <constructor-arg value="saveOrUpdateSmtpItem"/>
+    <constructor-arg value="AlertFoward"/>
+    <constructor-arg value="创建和更新smtp配置"/>
+    <constructor-arg value="Save or Update Smtp Item"/>
+  </bean>
+
+
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="listMultiCompressedPerformanceData">
+    <constructor-arg value="listMultiCompressedPerformanceData"/>
+    <constructor-arg value="PerformanceData"/>
+    <constructor-arg value="性能统计"/>
+    <constructor-arg value="Performance Data Statistic"/>
+  </bean>
+  <bean class="py.icshare.authorization.ApiToAuthorize" id="verifyReportStatisticsPermission">
+    <constructor-arg value="verifyReportStatisticsPermission"/>
+    <constructor-arg value="PerformanceData"/>
+    <constructor-arg value="导出性能报表"/>
+    <constructor-arg value="Export Performance Data Report"/>
+  </bean>
+
+  <!--Scsi client -->
+  <!--<bean id="createScsiClient" class="py.icshare.authorization.ApiToAuthorize">-->
+  <!--<constructor-arg value="createScsiClient"/>-->
+  <!--<constructor-arg value="ScsiClient"/>-->
+  <!--<constructor-arg value="创建Scsi客户端"/>-->
+  <!--<constructor-arg value="Create ScsiClient"/>-->
+  <!--</bean>-->
+  <!--<bean id="deleteScsiClient" class="py.icshare.authorization.ApiToAuthorize">-->
+  <!--<constructor-arg value="deleteScsiClient"/>-->
+  <!--<constructor-arg value="ScsiClient"/>-->
+  <!--<constructor-arg value="删除Scsi客户端"/>-->
+  <!--<constructor-arg value="Delete ScsiClient"/>-->
+  <!--</bean>-->
+
+  <bean class="py.icshare.authorization.Role" id="admin">
+    <constructor-arg value="admin"/>
+    <constructor-arg value="內建管理员角色，拥有绝大部分权限。"/>
+    <constructor-arg>
+      <set value-type="py.icshare.authorization.ApiToAuthorize">
+        <!-- Volume -->
+        <ref bean="createVolume"/>
+        <ref bean="deleteVolume"/>
+        <ref bean="extendVolume"/>
+        <ref bean="recycleVolume"/>
+        <ref bean="fixVolume"/>
+        <ref bean="confirmFixVolume"/>
+
+        <!-- StoragePool -->
+        <ref bean="createStoragePool"/>
+        <ref bean="updateStoragePool"/>
+        <ref bean="removeArchiveFromStoragePool"/>
+        <ref bean="deleteStoragePool"/>
+
+        <!-- Domain -->
+        <ref bean="createDomain"/>
+        <ref bean="updateDomain"/>
+        <ref bean="removeDatanodeFromDomain"/>
+        <ref bean="deleteDomain"/>
+
+        <!-- Driver -->
+        <ref bean="launchDriver"/>
+        <ref bean="umountDriver"/>
+
+        <!-- Access_Rule -->
+        <ref bean="applyIscsiAccessRules"/>
+        <ref bean="cancelIscsiAccessRules"/>
+        <ref bean="deleteIscsiAccessRules"/>
+        <ref bean="createIscsiAccessRules"/>
+        <ref bean="applyVolumeAccessRuleOnVolumes"/>
+        <ref bean="cancelVolAccessRuleAllApplied"/>
+        <ref bean="cancelVolumeAccessRules"/>
+        <ref bean="deleteVolumeAccessRules"/>
+        <ref bean="createVolumeAccessRules"/>
+
+        <!-- Hardware -->
+        <ref bean="onlineDisk"/>
+        <ref bean="offlineDisk"/>
+        <ref bean="fixConfigMismatchDisk"/>
+        <ref bean="deleteServerNodes"/>
+        <ref bean="updateServerNode"/>
+        <ref bean="changeDiskLightStatus"/>
+        <ref bean="markInstanceMaintenance"/>
+        <ref bean="cancelInstanceMaintenance"/>
+
+        <!-- Account -->
+        <ref bean="createAccount"/>
+        <ref bean="deleteAccounts"/>
+        <!--<ref bean="listAccounts"/>-->
+        <ref bean="resetAccountPassword"/>
+        <ref bean="assignRoles"/>
+        <!--<ref bean="listResources"/>-->
+        <ref bean="assignResources"/>
+
+        <!-- Role -->
+        <ref bean="createRole"/>
+        <ref bean="updateRole"/>
+        <ref bean="deleteRoles"/>
+        <!--<ref bean="listRoles"/>-->
+
+        <!-- Qos -->
+        <ref bean="createIoLimitations"/>
+        <ref bean="deleteIoLimitations"/>
+        <ref bean="updateIoLimitations"/>
+        <ref bean="applyIoLimitations"/>
+        <ref bean="cancelIoLimitations"/>
+        <ref bean="applyMigrationRules"/>
+        <ref bean="cancelMigrationRules"/>
+
+        <!-- rebalance -->
+        <ref bean="addRebalanceRule"/>
+        <ref bean="deleteRebalanceRule"/>
+        <ref bean="updateRebalanceRule"/>
+        <ref bean="applyRebalanceRule"/>
+        <ref bean="unApplyRebalanceRule"/>
+        <ref bean="getRebalanceRule"/>
+        <ref bean="getAppliedRebalanceRulePool"/>
+        <ref bean="getUnAppliedRebalanceRulePool"/>
+
+        <!-- Other -->
+        <ref bean="saveOperationLogsToCSV"/>
+
+        <!--Scsi client -->
+        <!--<ref bean="createScsiClient"/>-->
+        <!--<ref bean="deleteScsiClient"/>-->
+
+      </set>
+    </constructor-arg>
+    <constructor-arg value="true"/>
+    <constructor-arg value="false"/>
+  </bean>
+
+  <!-- BuiltIn Role admin -->
+  <bean class="py.icshare.authorization.Role" id="user">
+    <constructor-arg value="user"/>
+    <constructor-arg value="內建用户角色，可以操作卷。"/>
+    <constructor-arg>
+      <set>
+        <!-- Volume -->
+        <ref bean="createVolume"/>
+        <ref bean="deleteVolume"/>
+        <ref bean="extendVolume"/>
+        <ref bean="recycleVolume"/>
+
+        <!-- Driver -->
+        <ref bean="launchDriver"/>
+        <ref bean="umountDriver"/>
+
+        <!-- Access_Rule -->
+        <ref bean="applyIscsiAccessRules"/>
+        <ref bean="cancelIscsiAccessRules"/>
+        <ref bean="deleteIscsiAccessRules"/>
+        <ref bean="createIscsiAccessRules"/>
+        <ref bean="applyVolumeAccessRuleOnVolumes"/>
+        <ref bean="cancelVolAccessRuleAllApplied"/>
+        <ref bean="cancelVolumeAccessRules"/>
+        <ref bean="deleteVolumeAccessRules"/>
+        <ref bean="createVolumeAccessRules"/>
+
+        <!-- Qos -->
+        <ref bean="createIoLimitations"/>
+        <ref bean="deleteIoLimitations"/>
+        <ref bean="updateIoLimitations"/>
+        <ref bean="applyIoLimitations"/>
+        <ref bean="cancelIoLimitations"/>
+        <ref bean="applyMigrationRules"/>
+        <ref bean="cancelMigrationRules"/>
+
+        <!-- rebalance -->
+        <ref bean="addRebalanceRule"/>
+        <ref bean="deleteRebalanceRule"/>
+        <ref bean="updateRebalanceRule"/>
+        <ref bean="applyRebalanceRule"/>
+        <ref bean="unApplyRebalanceRule"/>
+        <ref bean="getRebalanceRule"/>
+        <ref bean="getAppliedRebalanceRulePool"/>
+        <ref bean="getUnAppliedRebalanceRulePool"/>
+
+        <!-- Other -->
+
+        <!--Scsi client -->
+        <!--<ref bean="createScsiClient"/>-->
+        <!--<ref bean="deleteScsiClient"/>-->
+
+      </set>
+    </constructor-arg>
+    <constructor-arg value="true"/>
+    <constructor-arg value="false"/>
+  </bean>
+
+  <!-- BuiltIn Role user -->
+  <util:set id="apiSet" value-type="py.icshare.authorization.ApiToAuthorize">
+    <!-- Volume -->
+    <ref bean="createVolume"/>
+    <ref bean="deleteVolume"/>
+    <ref bean="extendVolume"/>
+    <ref bean="recycleVolume"/>
+    <ref bean="fixVolume"/>
+    <ref bean="confirmFixVolume"/>
+
+    <!-- StoragePool -->
+    <ref bean="createStoragePool"/>
+    <ref bean="updateStoragePool"/>
+    <ref bean="removeArchiveFromStoragePool"/>
+    <ref bean="deleteStoragePool"/>
+
+    <!-- Domain -->
+    <ref bean="createDomain"/>
+    <ref bean="updateDomain"/>
+    <ref bean="removeDatanodeFromDomain"/>
+    <ref bean="deleteDomain"/>
+
+    <!-- Driver -->
+    <ref bean="launchDriver"/>
+    <ref bean="umountDriver"/>
+
+    <!-- Access_Rule -->
+    <ref bean="applyIscsiAccessRules"/>
+    <ref bean="cancelIscsiAccessRules"/>
+    <ref bean="deleteIscsiAccessRules"/>
+    <ref bean="createIscsiAccessRules"/>
+    <ref bean="applyVolumeAccessRuleOnVolumes"/>
+    <ref bean="cancelVolAccessRuleAllApplied"/>
+    <ref bean="cancelVolumeAccessRules"/>
+    <ref bean="deleteVolumeAccessRules"/>
+    <ref bean="createVolumeAccessRules"/>
+
+    <!-- Hardware -->
+    <ref bean="onlineDisk"/>
+    <ref bean="offlineDisk"/>
+    <ref bean="fixConfigMismatchDisk"/>
+    <ref bean="deleteServerNodes"/>
+    <ref bean="updateServerNode"/>
+    <ref bean="changeDiskLightStatus"/>
+    <ref bean="markInstanceMaintenance"/>
+    <ref bean="cancelInstanceMaintenance"/>
+
+    <!-- Account -->
+    <ref bean="createAccount"/>
+    <ref bean="deleteAccounts"/>
+    <!--<ref bean="listAccounts"/>-->
+    <ref bean="resetAccountPassword"/>
+    <ref bean="assignRoles"/>
+    <!--<ref bean="listResources"/>-->
+    <ref bean="assignResources"/>
+
+    <!-- Role -->
+    <ref bean="createRole"/>
+    <ref bean="updateRole"/>
+    <ref bean="deleteRoles"/>
+    <!--<ref bean="listRoles"/>-->
+
+    <!-- Qos -->
+    <ref bean="createIoLimitations"/>
+    <ref bean="deleteIoLimitations"/>
+    <ref bean="updateIoLimitations"/>
+    <ref bean="applyIoLimitations"/>
+    <ref bean="cancelIoLimitations"/>
+    <ref bean="applyMigrationRules"/>
+    <ref bean="cancelMigrationRules"/>
+
+    <!-- rebalance -->
+    <ref bean="addRebalanceRule"/>
+    <ref bean="deleteRebalanceRule"/>
+    <ref bean="updateRebalanceRule"/>
+    <ref bean="applyRebalanceRule"/>
+    <ref bean="unApplyRebalanceRule"/>
+    <ref bean="getRebalanceRule"/>
+    <ref bean="getAppliedRebalanceRulePool"/>
+    <ref bean="getUnAppliedRebalanceRulePool"/>
+
+    <!-- Other -->
+    <ref bean="saveOperationLogsToCSV"/>
+
+    <!--Scsi client -->
+    <!--<ref bean="createScsiClient"/>-->
+    <!--<ref bean="deleteScsiClient"/>-->
+
+  </util:set>
+
+  <util:set id="builtInRoles" value-type="py.icshare.authorization.Role">
+    <ref bean="admin"/>
+    <ref bean="user"/>
+  </util:set>
+</beans>

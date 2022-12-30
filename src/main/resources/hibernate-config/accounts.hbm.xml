@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="py.icshare.AccountMetadata" table="accounts">
+    <id column="account_id" name="accountId"/>
+    <property column="account_name" name="accountName" type="string"/>
+    <property column="hashed_password" name="hashedPassword" type="string"/>
+    <property column="salt" name="salt" type="string"/>
+    <property column="created_at" name="createdAt" type="timestamp"/>
+    <property column="account_type" name="accountType" type="string"/>
+    <set fetch="select" lazy="false"
+      name="resources" table="accounts_resources">
+      <key>
+        <column name="account_id" not-null="true"/>
+      </key>
+      <many-to-many entity-name="py.icshare.authorization.PyResource">
+        <column name="resource_id" not-null="true"/>
+      </many-to-many>
+    </set>
+    <set fetch="select" lazy="false"
+      name="roles" table="accounts_roles">
+      <key>
+        <column name="account_id" not-null="true"/>
+      </key>
+      <many-to-many entity-name="py.icshare.authorization.Role">
+        <column name="role_id" not-null="true"/>
+      </many-to-many>
+    </set>
+  </class>
+</hibernate-mapping>

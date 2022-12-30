@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="py.icshare.ServerNode" table="servernode">
+    <id column="id" name="id" type="java.lang.String"/>
+    <property column="hostName" name="hostName" type="java.lang.String"/>
+    <property column="modelInfo" name="modelInfo" type="java.lang.String"/>
+    <property column="cpuInfo" name="cpuInfo" type="java.lang.String"/>
+    <property column="memoryInfo" name="memoryInfo" type="java.lang.String"/>
+    <property column="diskInfo" name="diskInfo" type="java.lang.String"/>
+    <property column="networkCardInfo" name="networkCardInfo" type="java.lang.String"/>
+    <property column="networkCardInfoName" name="networkCardInfoName" type="java.lang.String"/>
+    <property column="manageIp" name="manageIp" type="java.lang.String"/>
+    <property column="gatewayIp" name="gatewayIp" type="java.lang.String"/>
+    <property column="storeIp" name="storeIp" type="java.lang.String"/>
+    <property column="rackNo" name="rackNo" type="java.lang.String"/>
+    <property column="slotNo" name="slotNo" type="java.lang.String"/>
+    <property column="status" name="status" type="java.lang.String"/>
+    <property column="childFramNo" name="childFramNo" type="java.lang.String"/>
+    <property column="sensorInfo" name="sensorInfo" type="java.sql.Blob"/>
+    <set cascade="save-update,delete" lazy="false" name="diskInfoSet">
+      <key column="serverNode_Id"></key>
+      <one-to-many class="py.icshare.DiskInfo"/>
+    </set>
+
+  </class>
+
+</hibernate-mapping>

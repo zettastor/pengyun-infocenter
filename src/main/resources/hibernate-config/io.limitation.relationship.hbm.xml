@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="py.icshare.qos.IoLimitationRelationshipInformation"
+    table="iolimitation_relationship">
+    <id column="relationship_id" name="relationshipId"/>
+    <property column="drivercontainer_id" name="driverContainerId" type="long"/>
+    <property column="volume_id" name="volumeId" type="long"/>
+    <property column="snapshot_id" name="snapshotId" type="integer"/>
+    <property column="driver_type" name="driverType" type="string"/>
+    <property column="rule_id" name="ruleId" type="long"/>
+    <property column="status" name="status" type="string"/>
+  </class>
+</hibernate-mapping>
+

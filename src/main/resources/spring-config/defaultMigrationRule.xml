@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+  <bean class="py.icshare.qos.MigrationRule" id="servicePriorityMigrationRule">
+    <property name="ruleId" value="1654535507628535891"/>
+    <property name="migrationRuleName" value="前端应用优先"/>
+    <property name="maxMigrationSpeed" value="1"/>
+    <property name="migrationStrategy" value="Manual"/>
+    <property name="checkSecondaryInactiveThresholdMode" value="AbsoluteTime"/>
+    <property name="startTime" value="0"/>
+    <property name="endTime" value="86340"/>
+    <property name="ignoreMissPagesAndLogs" value="true"/>
+    <property name="status" value="AVAILABLE"/>
+    <property name="waitTime" value="0"/>
+    <property name="builtInRule" value="true"/>
+  </bean>
+
+  <bean class="py.icshare.qos.MigrationRule" id="refactorPriorityMigrationRule">
+    <property name="ruleId" value="2063414912856302846"/>
+    <property name="migrationRuleName" value="数据修复优先"/>
+    <property name="maxMigrationSpeed" value="200"/>
+    <property name="migrationStrategy" value="Manual"/>
+    <property name="checkSecondaryInactiveThresholdMode" value="AbsoluteTime"/>
+    <property name="startTime" value="0"/>
+    <property name="endTime" value="86340"/>
+    <property name="ignoreMissPagesAndLogs" value="true"/>
+    <property name="status" value="AVAILABLE"/>
+    <property name="waitTime" value="0"/>
+    <property name="builtInRule" value="true"/>
+  </bean>
+  <util:set id="defaultMigrationRuleSet" value-type="py.icshare.qos.MigrationRule">
+    <ref bean="servicePriorityMigrationRule"/>
+    <ref bean="refactorPriorityMigrationRule"/>
+  </util:set>
+
+</beans>

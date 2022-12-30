@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="py.icshare.VolumeCreationRequest" table="create_volume_requests">
+    <id column="volume_id" name="volumeId"/>
+    <property column="root_volume_id" name="rootVolumeId" type="java.lang.Long"/>
+    <property column="volume_size" name="volumeSize" type="java.lang.Long"/>
+    <property column="name" name="name" type="java.lang.String"/>
+    <property column="volume_type" name="volumeType" type="java.lang.String"/>
+    <property column="request_type" name="requestTypeString" type="java.lang.String"/>
+    <property column="account_id" name="accountId" type="java.lang.Long"/>
+    <property column="segment_size" name="segmentSize" type="java.lang.Long"/>
+    <property column="created_at" name="createdAt" type="java.lang.Long"/>
+    <property column="status" name="status" type="java.lang.String"/>
+    <property column="domain_id" name="domainId" type="java.lang.Long"/>
+    <property column="src_volume_id" name="srcVolumeId" type="java.lang.Long"/>
+    <property column="storagepool_id" name="storagePoolId" type="java.lang.Long"/>
+    <property column="enable_launch_multi_drivers" name="enableLaunchMultiDrivers"
+      type="java.lang.Boolean"/>
+  </class>
+</hibernate-mapping>

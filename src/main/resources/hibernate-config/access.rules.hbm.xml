@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="py.icshare.AccessRuleInformation" table="access_rules">
+    <id column="rule_id" name="ruleId"/>
+    <property column="ip_address" name="ipAddress" type="string"/>
+    <property column="permission" name="permission" type="integer"/>
+    <property column="status" name="status" type="string"/>
+  </class>
+</hibernate-mapping>

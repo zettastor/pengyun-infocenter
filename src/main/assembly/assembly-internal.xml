@@ -1,0 +1,105 @@
+<!--
+  ~ Copyright (c) 2022. PengYunNetWork
+  ~
+  ~ This program is free software: you can use, redistribute, and/or modify it
+  ~ under the terms of the GNU Affero General Public License, version 3 or later ("AGPL"),
+  ~ as published by the Free Software Foundation.
+  ~
+  ~ This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+  ~  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  ~
+  ~  You should have received a copy of the GNU Affero General Public License along with
+  ~  this program. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<assembly
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>lib</outputDirectory>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+  </dependencySets>
+  <fileSets>
+    <fileSet>
+      <directory>src/main/bin</directory>
+      <fileMode>0744</fileMode>
+      <includes>
+        <include>*.sh</include>
+      </includes>
+      <outputDirectory>/bin</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/resources/default-license</directory>
+      <outputDirectory>/config</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/config</directory>
+      <outputDirectory>/config</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/resources/config</directory>
+      <includes>
+        <include>*.properties</include>
+      </includes>
+      <outputDirectory>/config</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/resources</directory>
+      <includes>
+        <include>log4j.properties</include>
+      </includes>
+      <outputDirectory>/config</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/resources</directory>
+      <includes>
+        <include>manifest.mf</include>
+      </includes>
+      <outputDirectory>/</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/resources/spring-config</directory>
+      <outputDirectory>/spring-config</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/bin</directory>
+      <directoryMode>0755</directoryMode>
+      <excludes>
+        <exclude>*</exclude>
+      </excludes>
+      <outputDirectory>/logs</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>target</directory>
+      <excludes>
+        <exclude>${project.build.finalName}-release.jar</exclude>
+      </excludes>
+      <includes>
+        <include>${project.build.finalName}.jar</include>
+      </includes>
+      <outputDirectory>/lib</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>target/classes/JNI-lib/monitor</directory>
+      <includes>
+        <include>*.*</include>
+      </includes>
+      <outputDirectory>/lib</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>target/classes/config</directory>
+      <includes>
+        <include>*.properties</include>
+      </includes>
+      <outputDirectory>/config</outputDirectory>
+    </fileSet>
+  </fileSets>
+  <formats>
+    <format>tar.gz</format>
+  </formats>
+  <id>internal</id>
+
+</assembly>

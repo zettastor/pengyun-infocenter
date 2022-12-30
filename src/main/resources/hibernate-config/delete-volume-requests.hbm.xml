@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="py.infocenter.store.control.DeleteVolumeRequest" table="delete_volume_requests">
+    <id column="volume_id" name="volumeId"/>
+    <property column="volume_name" name="volumeName" type="java.lang.String"/>
+    <property column="account_id" name="accountId" type="java.lang.Long"/>
+    <property column="new_volume_id" name="newVolumeId" type="java.lang.Long"/>
+    <property column="new_volume_name" name="newVolumeName" type="java.lang.String"/>
+    <property column="created_at" name="createdAt" type="java.lang.Long"/>
+  </class>
+</hibernate-mapping>

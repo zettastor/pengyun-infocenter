@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="py.informationcenter.ScsiClient" table="scsi_client">
+    <composite-id class="py.informationcenter.ScsiClientInfo"
+      name="scsiClientInfo">
+      <key-property column="ipName" name="ipName" type="java.lang.String"/>
+      <key-property column="volume_id" name="volumeId" type="long"/>
+      <key-property column="snapshot_id" name="snapshotId" type="integer"/>
+    </composite-id>
+    <property column="driverContainer_Id" name="driverContainerId" type="long"/>
+    <property column="driverContainer_Id_Scsi" name="driverContainerIdScsi" type="long"/>
+    <property column="statusDescription" name="statusDescription" type="java.lang.String"/>
+    <property column="scsiDriverStatus" name="scsiDriverStatus" type="java.lang.String"/>
+    <property column="descriptionType" name="descriptionType" type="java.lang.String"/>
+  </class>
+</hibernate-mapping>

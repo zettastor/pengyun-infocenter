@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="py.icshare.qos.MigrationRuleInformation" table="migration_rules">
+    <id column="rule_id" name="ruleId"/>
+    <property column="migration_name" name="migrationRuleName" type="java.lang.String"/>
+    <property column="max_migration_speed" name="maxMigrationSpeed" type="java.lang.Long"/>
+    <property column="migration_strategy" name="migrationStrategy" type="java.lang.String"/>
+    <property column="status" name="status" type="java.lang.String"/>
+    <property column="check_secondary_inactive_threshold_mode"
+      name="checkSecondaryInactiveThresholdMode" type="java.lang.String"/>
+    <property column="start_time" name="startTime" type="java.lang.Long"/>
+    <property column="end_time" name="endTime" type="java.lang.Long"/>
+    <property column="wait_time" name="waitTime" type="java.lang.Long"/>
+    <property column="ignore_miss_pages_and_logs" name="ignoreMissPagesAndLogs"
+      type="java.lang.Boolean"/>
+    <property column="builtInRule" name="builtInRule" type="java.lang.Boolean"/>
+  </class>
+</hibernate-mapping>

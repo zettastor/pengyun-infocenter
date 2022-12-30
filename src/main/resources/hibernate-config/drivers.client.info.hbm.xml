@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="py.icshare.DriverClientInformation" table="driverClients">
+    <composite-id class="py.icshare.DriverClientKeyInformation"
+      name="driverClientKeyInformation">
+      <key-property column="drivercontainer_id" name="driverContainerId" type="long"/>
+      <key-property column="volume_id" name="volumeId" type="long"/>
+      <key-property column="driver_type" name="driverType" type="java.lang.String"/>
+      <key-property column="snapshot_id" name="snapshotId" type="integer"/>
+      <key-property column="client_info" name="clientInfo" type="java.lang.String"/>
+      <key-property column="time_id" name="time" type="long"/>
+    </composite-id>
+    <property column="driver_name" name="driverName" type="java.lang.String"/>
+    <property column="driver_ip" name="hostName" type="java.lang.String"/>
+    <property column="volume_name" name="volumeName" type="java.lang.String"/>
+    <property column="volume_description" name="volumeDescription" type="java.lang.String"/>
+    <property column="status" name="status" type="java.lang.Boolean"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+  <class name="py.icshare.OperationInformation" table="operation">
+    <id column="operation_id" name="operationId" type="java.lang.Long"/>
+    <property column="target_id" name="targetId" type="java.lang.Long"/>
+    <property column="target_type" name="targetType" type="java.lang.String"/>
+    <property column="operation_starttime" name="startTime" type="java.lang.Long"/>
+    <property column="operation_endtime" name="endTime" type="java.lang.Long"/>
+    <property column="operation_description" name="description" type="java.lang.String"/>
+    <property column="operation_status" name="status" type="java.lang.String"/>
+    <property column="operation_progress" name="progress" type="java.lang.Long"/>
+    <property column="operation_error" name="errorMessage" type="java.lang.String"/>
+    <property column="account_id" name="accountId" type="java.lang.Long"/>
+    <property column="account_name" name="accountName" type="java.lang.String"/>
+    <property column="operation_type" name="operationType" type="java.lang.String"/>
+    <property column="operation_object" name="operationObject" type="java.lang.String"/>
+    <property column="target_Name" name="targetName" type="java.lang.String"/>
+    <property column="target_SourceSize" name="targetSourceSize" type="java.lang.Long"/>
+    <property column="endPoint_List" name="endPointList" type="java.lang.String"/>
+    <property column="snapshot_id" name="snapshotId" type="java.lang.Integer"/>
+  </class>
+</hibernate-mapping>

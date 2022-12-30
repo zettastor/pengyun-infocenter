@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="py.icshare.VolumeInformation" table="volumes">
+    <id column="volume_id" name="volumeId"/>
+    <property column="root_volume_id" name="rootVolumeId" type="long"/>
+    <property column="child_volume_id" name="childVolumeId" type="java.lang.Long"/>
+    <property column="domain_id" name="domainId" type="java.lang.Long"/>
+    <property column="storage_pool_id" name="storagePoolId" type="java.lang.Long"/>
+    <property column="volume_size" name="volumeSize" type="long"/>
+    <property column="extending_size" name="extendingSize" type="long"/>
+    <property column="name" name="name" type="string"/>
+    <property column="volume_type" name="volumeType" type="string"/>
+    <property column="volume_status" name="volumeStatus" type="java.lang.String"/>
+    <property column="account_id" name="accountId" type="long"/>
+    <property column="segment_size" name="segmentSize" type="long"/>
+    <property column="dead_time" name="deadTime" type="java.lang.Long"/>
+    <property column="volume_layout" name="volumeLayout" type="string"/>
+    <property column="free_space_ratio" name="freeSpaceRatio" type="string"/>
+    <property column="volume_created_time" name="volumeCreatedTime" type="timestamp"/>
+    <property column="last_extended_time" name="lastExtendedTime" type="timestamp"/>
+    <property column="volume_source" name="volumeSource" type="java.lang.String"/>
+    <property column="read_write" name="readWrite" type="java.lang.String"/>
+    <property column="in_action" name="inAction" type="java.lang.String"/>
+    <property column="page_wrapp_count" name="pageWrappCount" type="int"/>
+    <property column="segment_wrapp_count" name="segmentWrappCount" type="int"/>
+    <property column="enable_launch_multi_drivers" name="enableLaunchMultiDrivers"
+      type="java.lang.Boolean"/>
+    <property column="rebalanceVersion" name="rebalanceVersion" type="long"/>
+    <property column="each_extend_size" name="eachTimeExtendVolumeSize" type="java.lang.String"/>
+    <property column="mark_delete" name="markDelete" type="java.lang.Boolean"/>
+    <property column="client_last_connectTime" name="clientLastConnectTime" type="long"/>
+    <property column="volume_description" name="volumeDescription" type="java.lang.String"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="py.icshare.ScsiDriverMetadata" table="drivers_scsi">
+    <composite-id class="py.icshare.DriverKeyForScsi"
+      name="driverKeyForScsi">
+      <key-property column="drivercontainer_Id" name="drivercontainerId" type="long"/>
+      <key-property column="volume_id" name="volumeId" type="long"/>
+      <key-property column="snapshot_id" name="snapshotId" type="integer"/>
+    </composite-id>
+
+    <property column="scsiDeviceStatus" name="scsiDeviceStatus" type="java.lang.String"/>
+    <property column="scsiDevice" name="scsiDevice" type="java.lang.String"/>
+    <property column="lastReportTime" name="lastReportTime" type="long"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="py.icshare.qos.RebalanceRuleInformation" table="rebalance_rules">
+    <id column="rule_id" name="ruleId"/>
+    <property column="rule_name" name="ruleName" type="java.lang.String"/>
+    <property column="absoluteTimeJson" name="absoluteTimeJson" type="java.lang.String"/>
+    <property column="wait_time" name="waitTime" type="java.lang.Long"/>
+    <property column="poolIds" name="poolIds" type="java.lang.String"/>
+  </class>
+</hibernate-mapping>
