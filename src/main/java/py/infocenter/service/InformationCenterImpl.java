@@ -14865,7 +14865,7 @@ public class InformationCenterImpl extends AbstractConfigurationServer
         NodeInfo.parseNetCardInfoToGetIps(serverNode.getNetworkCardInfo()));
 
     //find SystemDaemon services
-    /*** this time not have SystemDaemon
+    /* this time not have SystemDaemon
      EndPoint endPoint = null;
      Set<Instance> instanceSet = instanceStore
               .getAll(PyService.SYSTEMDAEMON.getServiceName(), InstanceStatus.OK);
@@ -14905,7 +14905,7 @@ public class InformationCenterImpl extends AbstractConfigurationServer
           logger.error("Caught an exception", e);
           throw new TException(e);
       }
-    ****/
+    */
 
     GetDiskSmartInfoResponseThrift response = new GetDiskSmartInfoResponseThrift();
     logger.warn("getDiskSmartInfo, response is {}", response);
