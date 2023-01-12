@@ -1710,6 +1710,7 @@ public class InformationCenterImpl extends AbstractConfigurationServer
           //just for dirver lost in db, set the report time
           reportingDriverMetadata.setCreateTime(currentTime);
           if (driverInStore != null) {
+            reportingDriverMetadata.setDriverName(driverInStore.getDriverName());
             reportingDriverMetadata
                 .setDynamicIoLimitationId(driverInStore.getDynamicIoLimitationId());
             reportingDriverMetadata
