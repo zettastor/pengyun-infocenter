@@ -2151,16 +2151,7 @@ public class InformationCenterImpl extends AbstractConfigurationServer
             processExceptionWithSegmentUnitReport(conflictSegmentUnits, segUnit.getSegId(), e);
           }
         } else {
-            //if the volume lost in db, just the master can rebuild volume
-            if (InstanceStatus.OK == appContext.getStatus()) {
-                volumeMetadata = processSegmentUnitWithVolumeNotExist(segUnit);
-            } else {
-                //save
-                volumesNotToReportToThisInstance.add(volumeId);
-                volumeNotToReportMap.put(currentInstanceId, volumesNotToReportToThisInstance);
-                logger.warn("volume lost in db, not report this volume:{} to current instance :{} ",
-                        volumeId, currentInstanceId);
-            }
+          volumeMetadata = processSegmentUnitWithVolumeNotExist(segUnit);
         }
 
         if (volumeMetadata == null) {
