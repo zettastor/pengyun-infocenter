@@ -74,7 +74,6 @@
             <configuration>
               <descriptors>
                 <descriptor>src/main/assembly/assembly-internal.xml</descriptor>
-                <descriptor>src/main/assembly/assembly-release.xml</descriptor>
               </descriptors>
             </configuration>
             <goals>
@@ -92,11 +91,6 @@
           <mainClass>py.infocenter.Launcher</mainClass>
         </configuration>
         <groupId>org.codehaus.mojo</groupId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.22.1</version>
       </plugin>
     </plugins>
     <resources>
@@ -122,26 +116,6 @@
       <artifactId>dom4j</artifactId>
       <groupId>dom4j</groupId>
       <version>1.6.1</version>
-    </dependency>
-    <dependency>
-      <artifactId>ehcache</artifactId>
-      <groupId>net.sf.ehcache</groupId>
-      <version>1.5.0</version>
-    </dependency>
-    <dependency>
-      <artifactId>gmbal-api-only</artifactId>
-      <groupId>org.glassfish.gmbal</groupId>
-      <version>3.0.0-b023</version>
-    </dependency>
-    <dependency>
-      <artifactId>grizzly-framework</artifactId>
-      <groupId>org.glassfish.grizzly</groupId>
-      <version>2.2.19</version>
-    </dependency>
-    <dependency>
-      <artifactId>grizzly-thrift</artifactId>
-      <groupId>org.glassfish.grizzly</groupId>
-      <version>1.1.2</version>
     </dependency>
     <dependency>
       <artifactId>jcommander</artifactId>
@@ -178,12 +152,6 @@
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <artifactId>mysql-connector-java</artifactId>
-      <groupId>mysql</groupId>
-      <version>5.1.6</version>
-    </dependency>
-
-    <dependency>
       <artifactId>commons-dbcp</artifactId>
       <groupId>commons-dbcp</groupId>
       <version>1.2.2</version>
@@ -192,11 +160,6 @@
       <artifactId>postgresql</artifactId>
       <groupId>org.postgresql</groupId>
       <version>9.3-1100-jdbc4</version>
-    </dependency>
-    <dependency>
-      <artifactId>mariadb-java-client</artifactId>
-      <groupId>org.mariadb.jdbc</groupId>
-      <version>2.7.1</version>
     </dependency>
     <dependency>
       <artifactId>aspectjweaver</artifactId>
@@ -219,7 +182,7 @@
   <parent>
     <artifactId>dbs-root</artifactId>
     <groupId>com.pengyun.dbs</groupId>
-    <version>1.0.0-OS-SNAPSHOT</version>
+    <version>${revision}</version>
   </parent>
 
   <properties>
