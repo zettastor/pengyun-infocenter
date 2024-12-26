@@ -1,22 +1,23 @@
-/*
- * Copyright (c) 2022. PengYunNetWork
- *
- * This program is free software: you can use, redistribute, and/or modify it
- * under the terms of the GNU Affero General Public License, version 3 or later ("AGPL"),
- * as published by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
- *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
- *  You should have received a copy of the GNU Affero General Public License along with
- *  this program. If not, see <http://www.gnu.org/licenses/>.
- */
+/**
+* Copyright (C) 2013-2024 Nanjing Pengyun Network Technology Co., Ltd.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/ 
 
 package py.infocenter.service.selection;
 
-import edu.emory.mathcs.backport.java.util.Collections;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +29,7 @@ import org.slf4j.LoggerFactory;
  * from the n*factor+remainder elements.
  *
  */
-public class RandomSelectionStrategy implements SelectionStrategy {
+public class RandomSelectionStrategy<T> implements SelectionStrategy<T> {
 
   private static final Logger logger = LoggerFactory.getLogger(RandomSelectionStrategy.class);
 
@@ -46,7 +47,7 @@ public class RandomSelectionStrategy implements SelectionStrategy {
    * Random select specified n elements from the given collection.
    */
   @Override
-  public <T> List<T> select(Collection<T> objs, int n) {
+  public List<T> select(Collection<T> objs, int n) {
     if (n > objs.size()) {
       logger.warn("Unable to select {} elements from collection with size {}", n, objs.size());
       return null;
